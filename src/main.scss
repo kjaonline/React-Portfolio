@@ -1,0 +1,14 @@
+@import './partials/colors';
+@import './partials/normalize';
+@import './partials/mixins';
+
+
+// Components
+@import './layout/footer/footer';
+@import './layout/header/header';
+@import './layout/container/container';
+
+body {
+	background: $dark;
+	color: $textColor;
+}

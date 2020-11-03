@@ -1,0 +1,39 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	h1 {
+		color: $secondary;
+		text-transform: uppercase;
+		span {
+			color: #fff;
+			font-weight: normal;
+		}
+	}
+	.navLinks {
+		display: flex;
+		
+		a {
+			color: $textColor;
+			padding: 5px 10px;
+			text-decoration: none;
+			border: 1px solid #fff;
+			margin: 0 5px;
+			border-radius: 5px;
+			transition: 0.25s all;
+			&:hover {
+				color: $secondary;
+				background: $secondary;
+				color: #fff;
+				border: 1px solid $secondary;
+			}
+		}
+		.active {
+			color: $secondary;
+			background: $secondary;
+			color: #fff;
+			border: 1px solid $secondary;
+		}
+	}
+}
