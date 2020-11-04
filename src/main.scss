@@ -2,13 +2,22 @@
 @import './partials/normalize';
 @import './partials/mixins';
 
-
 // Components
 @import './layout/footer/footer';
 @import './layout/header/header';
 @import './layout/container/container';
+@import './layout/hero/hero';
+
+// Pages
+@import './pages/Home/home';
 
 body {
 	background: $dark;
 	color: $textColor;
+}
+
+.site-width {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: block;
 }
