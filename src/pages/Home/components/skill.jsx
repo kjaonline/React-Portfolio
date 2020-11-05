@@ -1,4 +1,4 @@
-import React, { props, componentDidMount} from 'react'
+import React from 'react'
 
 class Skill extends React.Component{
 	constructor(props){

@@ -7,7 +7,12 @@ class Home extends React.Component{
 		return(
 			<div className="page-home">
 				<Hero class="home" text="Kris Alcordo" description="I am a Jacksonville based front web developer with an eye for design and a passion for functional interfaces and usability." />
-				<Skills />
+				<section className="section site-width">
+					<h2>Web Development</h2>
+					<p>After 8 years in a very fruitful Internet Marketing career, I decided to pursue my dream to be a programmer. After 2 years of teaching myself, I landed my first web development job in 2018. </p>
+					<Skills />
+
+				</section>
 			</div>
 		)
 	}
