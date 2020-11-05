@@ -4,6 +4,29 @@
 	}
 
 	.skills {
-		
+		.skill {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 10px 0;
+			&-name {
+				width: 25%;
+			}
+			.proficiency {
+				width: 70%;
+				.bar {
+					position: relative;
+					height: 10px;
+					background: #000;
+					border-radius: 10px;
+					&-inside {
+						height: 100%;
+						background: $secondary;
+						border-radius: 10px;
+						transition: 1s ease-in-out;
+					}
+				}
+			}
+		}
 	}
 }

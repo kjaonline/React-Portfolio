@@ -6,6 +6,8 @@ class Skills extends React.Component{
 		return(
 			<div className="skills site-width">
 				<Skill skill="Semantic HTML" confidence="80" />
+				<Skill skill="CSS" confidence="90" />
+				<Skill skill="PHP" confidence="70" />
 			</div>
 		)
 	}

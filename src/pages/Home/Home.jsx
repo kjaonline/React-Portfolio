@@ -6,7 +6,7 @@ class Home extends React.Component{
 	render(){
 		return(
 			<div className="page-home">
-				<Hero class="home" text="Kris Alcordo" description="I am a Jacksonville based front-end developer with an eye for design and a passion for functional interfaces and usability." />
+				<Hero class="home" text="Kris Alcordo" description="I am a Jacksonville based front web developer with an eye for design and a passion for functional interfaces and usability." />
 				<Skills />
 			</div>
 		)
