@@ -9,6 +9,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
 import getPosts from './redux/actions/postsAction'
 import getSkills from './redux/actions/skillsAction'
+import getExperiences from './redux/actions/experiencesAction'
 
 function App() {
   const posts = useSelector(state => state.posts);
@@ -17,6 +18,7 @@ function App() {
 
   dispatch(getPosts)
   dispatch(getSkills)
+  dispatch(getExperiences)
 
   return (
     <Router>

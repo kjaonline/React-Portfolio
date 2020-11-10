@@ -4,7 +4,7 @@ class Skill extends React.Component{
 	constructor(props){
 		super(props)
 		this.state= {
-			width: 0
+			width: 0 + "%"
 		}
 	}
 	
@@ -24,7 +24,7 @@ class Skill extends React.Component{
 				</div>
 				<div className="proficiency">
 					<div className="bar">
-						<div style={{ width: `${this.state.width}` + "%" }} className="bar-inside">
+						<div style={{ width: `${this.state.width}` }} className="bar-inside">
 						</div>
 					</div>
 				</div>

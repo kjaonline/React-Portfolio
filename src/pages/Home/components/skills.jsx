@@ -15,6 +15,6 @@ class Skills extends React.Component{
 // Map Redux state to React component props
 const mapStateToProps = (state) => ({
 	skills: state.skillsReducer
-  })
+})
 
 export default connect(mapStateToProps)(Skills);

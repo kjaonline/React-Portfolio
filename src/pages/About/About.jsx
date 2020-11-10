@@ -1,13 +1,13 @@
-import React from 'react';
+import Experiences from './components/experiences'
 
-class About extends React.Component{
-	render(){
-		return(
-			<div>
-				About
-			</div>
-		)
-	}
+
+function About() {
+	return(
+		<div className="page-about">
+			<p>Kris</p>
+			<Experiences />
+		</div>
+	)
 }
 
 export default About;
