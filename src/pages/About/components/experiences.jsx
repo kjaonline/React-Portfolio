@@ -3,10 +3,15 @@ import Experience from './experience';
 import {connect} from 'react-redux'
 
 class Experiences extends React.Component{
+	
 	render(){
 		return(
 			<div className="experiences">
-				{this.props.experience.map((experience) => 
+				{this.props.experience
+				.sort(
+					(b, a) => new Date(a.startdate).getTime() - new Date(b.startdate).getTime()
+				)
+				.map((experience) => 
 				<Experience 
 					company={experience.Company} 
 					responsibilities={experience.Experience}  
@@ -14,6 +19,7 @@ class Experiences extends React.Component{
 					enddate={experience.enddate}
 					active={experience.employedherenow}
 					key={experience.id} 
+					address={experience.Address}
 				/>)}
 			</div>
 		)
@@ -21,8 +27,9 @@ class Experiences extends React.Component{
 }
 
 // Map Redux state to React component props
-const mapStateToProps = (state) => ({
+ const mapStateToProps = (state) => ({
 	experience: state.experiencesReducer
 })
+
 
 export default connect(mapStateToProps)(Experiences);

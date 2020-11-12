@@ -1,0 +1,16 @@
+.page-about {
+	@include siteWidth(1200px);	
+
+	.experience-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		padding: 10px;
+
+		h3 {
+			margin: 0 0 5px 0;
+			font-size: 1.5em;
+		}
+	}
+}
