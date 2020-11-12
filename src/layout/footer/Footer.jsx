@@ -8,7 +8,7 @@ library.add(fab)
 function Footer(){
 	return(
 		<div className="footer">
-			<div class="disclaimer">
+			<div className="disclaimer">
 				Kris Alcordo. kris@alcordo.com
 			</div>
 			<div className="links">
