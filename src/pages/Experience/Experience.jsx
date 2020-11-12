@@ -1,11 +1,9 @@
-
-import AboutText from './components/abouttext'
-
+import Experiences from './components/experiences'
 
 function About() {
 	return(
 		<div className="page-about">
-			<AboutText />
+			<Experiences />
 		</div>
 	)
 }

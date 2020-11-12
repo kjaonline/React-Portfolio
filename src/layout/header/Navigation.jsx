@@ -8,6 +8,7 @@ class Navigation extends React.Component{
 			<div className="navLinks">
 				<NavElement path="/" text="Home" />
 				<NavElement path="/about" text="About" />
+				<NavElement path="/experience" text="Experience" />
 			</div>
 		)
 	}

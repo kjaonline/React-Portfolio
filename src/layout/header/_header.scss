@@ -1,4 +1,5 @@
 .header {
+	@include siteWidth(1200px);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -33,7 +34,6 @@
 			}
 		}
 		.active {
-			color: $secondary;
 			background: $secondary;
 			color: $dark;
 			border: 1px solid $secondary;

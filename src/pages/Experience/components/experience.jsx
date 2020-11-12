@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown from 'react-markdown';
 
 
 class Experience extends React.Component {
@@ -30,7 +30,7 @@ class Experience extends React.Component {
 						<span>{ this.props.active ? 'Present' : this.formatDate(this.props.enddate) } </span>
 					</div>
 				</div>
-				<div className="experience-bod">
+				<div className="experience-body">
 					<ReactMarkdown source={this.props.responsibilities} />
 				</div>
 			</div>

@@ -1,16 +1,25 @@
 .page-about {
 	@include siteWidth(1200px);	
 
+	&-intro {
+		padding: 10px;
+		margin-bottom: 20px;
+	}
+
 	.experience-header {
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: space-between;
+		border-bottom: 1px dotted rgba(#ededed,.3);
 
 		padding: 10px;
 
 		h3 {
 			margin: 0 0 5px 0;
-			font-size: 1.5em;
+			
 		}
+	}
+	.experience-body {
+		padding: 10px;
 	}
 }

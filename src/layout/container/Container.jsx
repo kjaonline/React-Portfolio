@@ -10,6 +10,7 @@ import './container.scss'
 
 import Home from '../../pages/Home/Home'
 import About from '../../pages/About/About'
+import Experience from '../../pages/Experience/Experience'
 
 
 class Container extends React.Component{
@@ -17,6 +18,9 @@ class Container extends React.Component{
 		return(
 			<main className="container">
 				<Switch>
+					<Route path="/experience">
+						<Experience />
+					</Route>
 					<Route path="/about">
 						<About />
 					</Route>
