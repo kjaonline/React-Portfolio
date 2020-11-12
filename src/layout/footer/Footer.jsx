@@ -2,14 +2,23 @@ import React from 'react';
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
 library.add(fab)
 
 
-function Footer(){
+function Footer(props) {
+	let randomQuote = Math.floor(Math.random() * props.quotes.length)
+	console.log(props.quotes)
 	return(
 		<div className="footer">
 			<div className="disclaimer">
-				Kris Alcordo. kris@alcordo.com
+				<p>Kris Alcordo. kris@alcordo.com</p>
+				<p className="quote">
+					{ props.quotes[randomQuote].Quote }
+					<span>- { props.quotes[randomQuote].Author }</span>
+				</p>
 			</div>
 			<div className="links">
 				<ul>
@@ -34,4 +43,13 @@ function Footer(){
 	)
 }
 
-export default Footer;
+
+
+ const mapStateToProps = (state) => {
+	 return { quotes: state.quotesReducer }
+ }
+
+export default compose(
+	withRouter,
+	connect(mapStateToProps)
+)(Footer)

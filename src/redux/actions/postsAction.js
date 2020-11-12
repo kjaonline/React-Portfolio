@@ -8,4 +8,4 @@ export const getPosts = () => {
     };
 }
 
-export default getPosts();
+export default getPosts

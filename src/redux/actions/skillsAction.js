@@ -8,4 +8,4 @@ const getSkills = () => {
     };
 }
 
-export default getSkills()
+export default getSkills

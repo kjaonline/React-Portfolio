@@ -8,4 +8,4 @@ const getExperiences = () => {
     };
 }
 
-export default getExperiences()
+export default getExperiences

@@ -10,15 +10,17 @@ import { useDispatch } from 'react-redux'
 import getPosts from './redux/actions/postsAction'
 import getSkills from './redux/actions/skillsAction'
 import getExperiences from './redux/actions/experiencesAction'
+import getQuotes from './redux/actions/quotesAction'
 
 function App() {
   // const posts = useSelector(state => state.posts);
   // const skills = useSelector(state => state.skills);
   const dispatch = useDispatch();
 
-  dispatch(getPosts)
-  dispatch(getSkills)
-  dispatch(getExperiences)
+  dispatch(getPosts())
+  dispatch(getSkills())
+  dispatch(getExperiences())
+  dispatch(getQuotes())
 
   return (
     <Router>

@@ -1,6 +1,15 @@
 .footer {
 	padding: 20px 10px;
 	text-align: center;
+	.quote {
+		text-align: center;
+		line-height: 1.5;
+		span {
+			display: block;
+			font-weight: bold;
+			font-style: italic;
+		}
+	}
 
 	.disclaimer {
 		display: block;
