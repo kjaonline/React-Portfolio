@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import Navigation from './Navigation'
 
 class Header extends React.Component{
@@ -6,7 +7,7 @@ class Header extends React.Component{
 		return (
 			<header className="header">
 				<div className="branding">
-					<h1>Kris <span>Alcordo</span></h1>
+					<h1><NavLink exact strict to="/">Kris <span>Alcordo</span></NavLink></h1>
 				</div>
 				<Navigation />
 			</header>

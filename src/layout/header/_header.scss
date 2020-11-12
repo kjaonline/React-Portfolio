@@ -4,11 +4,14 @@
 	align-items: center;
 	padding: 10px;
 	h1 {
-		color: $secondary;
-		text-transform: uppercase;
-		span {
-			color: #fff;
-			font-weight: normal;
+		a {
+			color: $secondary;
+			text-transform: uppercase;
+			text-decoration: none;
+			span {
+				color: #fff;
+				font-weight: normal;
+			}
 		}
 	}
 	.navLinks {
