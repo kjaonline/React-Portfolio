@@ -9,22 +9,22 @@ function formatDate(date){
 	return `${months[formatted.getMonth() + 1]} ${formatted.getFullYear()}`
 }
 
-function Experience()  {
+function Experience(props)  {
 	return(
 		<div className="experience">
 			<div className="experience-header">
 				<div className="company-info">
-					<h3>{this.props.company}</h3>
-					<span className="address">{ this.props.address }</span>
+					<h3>{props.company}</h3>
+					<span className="address">{ props.address }</span>
 				</div>
 				<div className="tenure">
-					<span> { formatDate(this.props.startdate) }</span>
+					<span> { formatDate(props.startdate) }</span>
 					&nbsp;&mdash;&nbsp;
-					<span>{ this.props.active ? 'Present' : formatDate(this.props.enddate) } </span>
+					<span>{ props.active ? 'Present' : formatDate(props.enddate) } </span>
 				</div>
 			</div>
 			<div className="experience-body">
-				<ReactMarkdown source={this.props.responsibilities} />
+				<ReactMarkdown source={props.responsibilities} />
 			</div>
 		</div>
 	)
