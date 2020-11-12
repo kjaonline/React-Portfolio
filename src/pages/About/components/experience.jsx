@@ -6,7 +6,10 @@ class Experience extends React.Component {
 	constructor(props) {
 		super(props)
 	}
-
+	
+	componentDidMount(){
+		console.log(this.props.startdate)
+	}
 	render(){
 		return(
 			<div className="experience">
@@ -15,7 +18,9 @@ class Experience extends React.Component {
 						{this.props.company}
 					</div>
 					<div className="tenure">
-						<span>{this.props.startdate}</span> &mdash; <span>{ this.props.active ? 'Present' : this.props.enddate }</span>
+						<span> </span>
+						&mdash; 
+						<span>{ this.props.active ? 'Present' : this.props.enddate } </span>
 					</div>
 				</div>
 				<div className="experience-bod">

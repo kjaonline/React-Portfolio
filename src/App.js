@@ -6,14 +6,14 @@ import Container from './layout/container/Container'
 
 import { BrowserRouter as Router } from "react-router-dom";
 
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import getPosts from './redux/actions/postsAction'
 import getSkills from './redux/actions/skillsAction'
 import getExperiences from './redux/actions/experiencesAction'
 
 function App() {
-  const posts = useSelector(state => state.posts);
-  const skills = useSelector(state => state.skills);
+  // const posts = useSelector(state => state.posts);
+  // const skills = useSelector(state => state.skills);
   const dispatch = useDispatch();
 
   dispatch(getPosts)

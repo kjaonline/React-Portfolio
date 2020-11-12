@@ -4,14 +4,14 @@ class Skill extends React.Component{
 	constructor(props){
 		super(props)
 		this.state= {
-			width: 0 + "%"
+			width: 0 
 		}
 	}
 	
 	componentDidMount() {
 		setTimeout(() => {
 			this.setState({
-				width: this.props.confidence
+				width: this.props.confidence + "%"
 			})
 		}, 100);
 	}
