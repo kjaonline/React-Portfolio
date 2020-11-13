@@ -29,11 +29,15 @@ class Portfolio extends React.Component{
 	}
 
 	updateTags = (e) => {
+		const currentTags = this.state.filteredTags
+
 		if(! this.state.filteredTags.includes(e.target.getAttribute('type_id'))) {
+			currentTags.push(e.target.getAttribute('type_id'))
 			this.setState({
-				filteredTags: [...this.state.filteredTags,  e.target.getAttribute('type_id')]
+				filteredTags: currentTags
 			})
 		}
+
 	}
 
 	getAllTags = () => {
@@ -56,7 +60,6 @@ class Portfolio extends React.Component{
 		)
 		.then(
 			this.setState({
-				
 				loaded: false
 			})
 		)
@@ -65,8 +68,6 @@ class Portfolio extends React.Component{
 				portfolio: res.data,
 				loaded: true
 			})
-
-			console.log(res)
 		})
 	}
 
@@ -89,32 +90,34 @@ class Portfolio extends React.Component{
 	render() {
 		if ( this.state.loaded === false ){
 			return <div>Loading...</div>
-		}
-		return(
-			<div className="page-portfolio">
-				<div className="categories">
-					{this.state.initialTypes.map(function(job){
-						return(
-							<div onClick={this.tagClickHandler} className="category" key={job.id} type_id={job.id} type={job.portfoliotype}>
-								{job.portfoliotype}
-							</div>
-						)
-					}, this)}
-					<div onClick={this.resetPortfolio} className="reset" disabled={this.state.filteredTags < 1 ? true : false}  >
-						Reset
+		} else {
+			return(
+				<div className="pagePortfolio">
+					<div className="categories">
+						{this.state.initialTypes.map(function(job){
+							return(
+								<div onClick={this.tagClickHandler} className="category" key={job.id} type_id={job.id} type={job.portfoliotype}>
+									{job.portfoliotype}
+								</div>
+							)
+						}, this)}
+						<div onClick={this.resetPortfolio} className="reset" disabled={this.state.filteredTags < 1 ? true : false}  >
+							Reset
+						</div>
+					</div>
+					<div className="portfolio-items">
+						{
+							this.state.portfolio.map(function(item) {
+								return(
+									<Item title={item.portfolioname} key={item.id} tags={item.portfolio_types} images={item.images}/>
+								)
+							})
+						}
 					</div>
 				</div>
-				<div className="portfolio-items">
-					{
-						this.state.portfolio.map(function(item) {
-							return(
-								<Item title={item.portfolioname} key={item.id} tags={item.portfolio_types} images={item.images}/>
-							)
-						})
-					}
-				</div>
-			</div>
-		)
+			)
+		}
+		
 	}
 }
 
