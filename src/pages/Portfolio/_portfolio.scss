@@ -1,0 +1,39 @@
+.page-portfolio {
+	@include siteWidth(1200px);
+	display: flex;
+	.categories {
+		width: 30%;
+		display: block;
+		padding: 10px;
+		.category {
+			width: auto;
+			display: inline-block;
+			margin: 5px;
+			padding: 5px;
+			background: $dark;
+			cursor: pointer;
+			border-radius: 3px;
+			border: 1px solid #fff;
+			transition: 0.25s all;
+			&:hover {
+				background: $secondary;
+				border: 1px solid $secondary;
+			}
+		}
+	}
+
+	.categories .reset {
+		@extend .category;
+		width: calc(100% - 10px) ;
+		text-align: center;
+		display: block;
+		margin: 10px auto;
+		background: $secondary;
+		border: 1px solid $secondary;
+	}
+	.portfolio-items {
+		width: 70%;
+		display: block;
+		padding: 10px;
+	}
+}

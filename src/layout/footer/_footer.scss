@@ -1,19 +1,28 @@
 .footer {
 	padding: 20px 10px;
 	text-align: center;
+	&:hover {
+		.quote {
+			color:lighten($dark, 30%) ;
+		}
+	}
 	.quote {
 		text-align: center;
 		line-height: 1.5;
+		color: rgba(lighten($dark, 30%), .5);
+		transition: 0.25s all;
 		span {
 			display: block;
 			font-weight: bold;
-			font-style: italic;
 		}
 	}
 
 	.disclaimer {
 		display: block;
-		padding: 10px 0
+		padding: 10px 0;
+		p {
+			margin: 5px 0;
+		}
 	}
 
 	.links {

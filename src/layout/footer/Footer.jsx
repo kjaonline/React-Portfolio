@@ -10,15 +10,10 @@ library.add(fab)
 
 function Footer(props) {
 	let randomQuote = Math.floor(Math.random() * props.quotes.length)
-	console.log(props.quotes)
 	return(
 		<div className="footer">
 			<div className="disclaimer">
 				<p>Kris Alcordo. kris@alcordo.com</p>
-				<p className="quote">
-					{ props.quotes[randomQuote].Quote }
-					<span>- { props.quotes[randomQuote].Author }</span>
-				</p>
 			</div>
 			<div className="links">
 				<ul>
@@ -39,6 +34,10 @@ function Footer(props) {
 					</li>
 				</ul>
 			</div>
+			<p className="quote">
+				<em>{ props.quotes[randomQuote].Quote }</em>
+				<span>- { props.quotes[randomQuote].Author }</span>
+			</p>
 		</div>
 	)
 }

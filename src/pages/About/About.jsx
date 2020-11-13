@@ -1,7 +1,6 @@
 
 import AboutText from './components/abouttext'
 
-
 function About() {
 	return(
 		<div className="page-about">
