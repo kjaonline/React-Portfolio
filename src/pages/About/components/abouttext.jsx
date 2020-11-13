@@ -11,7 +11,7 @@ class AboutText extends React.Component {
 	}
 
 	componentDidMount(){
-		fetch('http://157.245.241.73/about-page-text')
+		fetch('https://157.245.241.73/about-page-text')
 		.then(response => response.json())
 		.then(data => {
 				this.setState({
