@@ -34,7 +34,6 @@ class Portfolio extends React.Component{
 				filteredTags: [...this.state.filteredTags,  e.target.getAttribute('type_id')]
 			})
 		}
-		this.getFilteredPortfolio()
 	}
 
 	getAllTags = () => {
@@ -47,7 +46,7 @@ class Portfolio extends React.Component{
 			}
 		)
 	}
-
+	
 	async getFilteredPortfolio() {
 		  await axios.get('http://157.245.241.73/portfolios', {
 				params: {
@@ -69,7 +68,6 @@ class Portfolio extends React.Component{
 
 			console.log(res)
 		})
-		
 	}
 
 	 getInitialPosts() {
