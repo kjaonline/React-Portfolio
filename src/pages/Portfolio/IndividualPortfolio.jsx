@@ -15,7 +15,6 @@ class IndividualPortfolio extends React.Component{
 	}
 	componentDidMount(){
 		this.getPortfolioData()
-		console.log(this.props)
 	}
 	async getPortfolioData(){
 		await axios.get(`http://157.245.241.73/portfolios/${this.props.match.params.id}`)
