@@ -43,7 +43,7 @@ class Portfolio extends React.Component{
 	}
 
 	getAllTags = () => {
-		fetch('https://157.245.241.73/portfolio-types')
+		fetch('https://api.krisalcordo.com/portfolio-types')
 		.then(res => res.json())
 		.then((data) =>{
 				this.setState({
@@ -55,7 +55,7 @@ class Portfolio extends React.Component{
 	}
 	
 	async getFilteredPortfolio() {
-		  await axios.get('https://157.245.241.73/portfolios', {
+		  await axios.get('https://api.krisalcordo.com/portfolios', {
 				params: {
 					portfolio_types: this.state.filteredTags
 				}
@@ -75,7 +75,7 @@ class Portfolio extends React.Component{
 	}
 
 	getInitialPosts() {
-		 fetch('https://157.245.241.73/portfolios')
+		 fetch('https://api.krisalcordo.com/portfolios')
 		.then(res => res.json())
 		.then((data) =>{
 				this.setState({

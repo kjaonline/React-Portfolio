@@ -1,6 +1,6 @@
 export const getPosts = () => {
 	return (dispatch, getState) => {
-		fetch('https://157.245.241.73/blogs')
+		fetch('https://api.krisalcordo.com/blogs')
 		.then(response => response.json())
 		.then(
             (payload) => dispatch({ type: "GETPOSTS", payload })

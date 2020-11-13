@@ -17,7 +17,7 @@ class IndividualPortfolio extends React.Component{
 		this.getPortfolioData()
 	}
 	async getPortfolioData(){
-		await axios.get(`https://157.245.241.73/portfolios/${this.props.match.params.id}`)
+		await axios.get(`https://api.krisalcordo.com/portfolios/${this.props.match.params.id}`)
 		.then((data)=>{
 			this.setState({
 				loaded: true,
@@ -34,7 +34,7 @@ class IndividualPortfolio extends React.Component{
 					loaded ? (
 						<div className="info">
 							<div className="individualPortfolio-head">
-								<img src={'http://157.245.241.73' + data.images[0].url} alt=""/>
+								<img src={'http://api.krisalcordo.com' + data.images[0].url} alt=""/>
 								<div className="individualPortfolio-head-info">
 									<h1>{data.portfolioname}</h1>
 									<div className="tags">

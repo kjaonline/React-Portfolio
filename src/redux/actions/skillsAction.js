@@ -1,6 +1,6 @@
 const getSkills = () => {
 	return (dispatch, getState) => {
-		fetch('https://157.245.241.73/skills')
+		fetch('https://api.krisalcordo.com/skills')
 		.then(response => response.json())
 		.then(
             (payload) => dispatch({ type: "GETSKILLS", payload })

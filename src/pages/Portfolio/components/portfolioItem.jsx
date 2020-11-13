@@ -4,7 +4,7 @@ function Item (props){
 	return(
 		<Link to={`portfolio/${props.id}`} className="portfolio-item">
 			<div className="portfolio-header">
-				<img src={'http://157.245.241.73' + props.images[0].url} alt=""/>
+				<img src={'http://api.krisalcordo.com' + props.images[0].url} alt=""/>
 				<div className="portfolio-title">
 				{ props.title }
 				</div>
