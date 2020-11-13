@@ -10,7 +10,7 @@ function Item (props){
 			<div className="description">
 				{props.content}
 				{props.tags.map(tag => {
-					return <span key={tag.id}>{tag.portfoliotype}</span>
+					return <span className={ props.filteredTags.includes(`${tag.id}`) ? "active tag" : "tag" } key={tag.id}>{tag.portfoliotype}</span>
 				})}
 			</div>
 		</div>

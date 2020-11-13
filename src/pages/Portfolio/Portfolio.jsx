@@ -97,9 +97,11 @@ class Portfolio extends React.Component{
 		const portfolioLoaded = this.state.portfolioLoaded
 		const tagsLoaded = this.state.tagsLoaded
 		let filteredTags = this.state.filteredTags
+		let filteredPortfolio = this.state.portfolio.length > 1
 		return(
 			<div className="pagePortfolio">
 				<div className="categories">
+					<div className="tags-container">
 					{
 						tagsLoaded ? (
 							this.state.initialTypes.map(function(job){
@@ -113,6 +115,7 @@ class Portfolio extends React.Component{
 							<Loader />
 						)
 					}
+					</div>
 
 					<div onClick={this.resetPortfolio} className="reset" disabled={this.state.filteredTags < 1 ? true : false}  >
 						Reset
@@ -120,15 +123,23 @@ class Portfolio extends React.Component{
 				</div>
 				<div className="portfolio-items">
 					{
-						portfolioLoaded ? (
-							this.state.portfolio.map(function(item) {
-								return(
-									<Item title={item.portfolioname} key={item.id} tags={item.portfolio_types} images={item.images}/>
-								)
-							})
-						) : (
-							<Loader />
+						filteredPortfolio ? (
+							portfolioLoaded ? (
+								this.state.portfolio.map(function(item) {
+									return(
+										<Item title={item.portfolioname} key={item.id} tags={item.portfolio_types} images={item.images} filteredTags={filteredTags} job={item.id}/>
+									)
+								})
+							) : (
+								<Loader />
+							)
+						) : ( 
+							<div className="nothing">
+								We Found Nothing
+							</div>
 						)
+						
+						
 					}
 				</div>
 			</div>
