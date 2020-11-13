@@ -1,14 +1,17 @@
 function Item (props){
 	return(
 		<div className="portfolio-item">
-			<div className="title">
+			<div className="portfolio-header">
 				<img src={'http://157.245.241.73' + props.images[0].url} alt=""/>
-				<div className="title">
+				<div className="portfolio-title">
 				{ props.title }
 				</div>
 			</div>
 			<div className="description">
 				{props.content}
+				{props.tags.map(tag => {
+					return <span key={tag.id}>{tag.portfoliotype}</span>
+				})}
 			</div>
 		</div>
 	)

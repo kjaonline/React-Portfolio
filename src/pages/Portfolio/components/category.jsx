@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import PortfolioTags from '../../../redux/actions/portfolioTagsAction'
+// import PortfolioTags from '../../../redux/actions/portfolioTagsAction'
 
 class Category extends React.Component{
 	updateCategories(e, type){

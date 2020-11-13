@@ -19,6 +19,11 @@
 				background: $secondary;
 				border: 1px solid $secondary;
 			}
+			&.active {
+				background: $secondary;
+				border: 1px solid $secondary;
+				color: $dark;
+			}
 		}
 	}
 
@@ -33,7 +38,35 @@
 	}
 	.portfolio-items {
 		width: 70%;
-		display: block;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
 		padding: 10px;
+
+		.portfolio-item {
+			width: calc(100% / 3 - 20px);
+			margin: 10px;
+			.portfolio-header {
+				position: relative;
+				img {
+					height: 300px;
+					width: 100%;
+					object-fit: cover;
+				}
+				.portfolio-title {
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					bottom: 0;
+					width: 100%;
+					padding: 10px;
+					text-align: left;
+					background: rgba(#000, .5);
+					font-weight: bold;
+					text-transform: uppercase;
+				}
+			}
+		}
 	}
 }

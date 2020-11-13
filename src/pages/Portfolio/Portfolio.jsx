@@ -2,6 +2,8 @@ import React from 'react'
 import Item from './components/portfolioItem'
 import axios from 'axios'
 
+import Loader from './components/loader'
+
 class Portfolio extends React.Component{
 	constructor(props){
 		super(props);
@@ -10,7 +12,8 @@ class Portfolio extends React.Component{
 			portfolio: [],
 			filteredTags: [],
 			disabled: true,
-			loaded: false
+			portfolioLoaded: false,
+			tagsLoaded: false
 		}
 		
 		this.tagClickHandler = this.tagClickHandler.bind(this)
@@ -30,7 +33,6 @@ class Portfolio extends React.Component{
 
 	updateTags = (e) => {
 		const currentTags = this.state.filteredTags
-
 		if(! this.state.filteredTags.includes(e.target.getAttribute('type_id'))) {
 			currentTags.push(e.target.getAttribute('type_id'))
 			this.setState({
@@ -45,7 +47,8 @@ class Portfolio extends React.Component{
 		.then(res => res.json())
 		.then((data) =>{
 				this.setState({
-					initialTypes: data
+					initialTypes: data,
+					tagsLoaded: true
 				})
 			}
 		)
@@ -60,64 +63,76 @@ class Portfolio extends React.Component{
 		)
 		.then(
 			this.setState({
-				loaded: false
+				portfolioLoaded: false
 			})
 		)
 		.then((res) => {
 			this.setState({
 				portfolio: res.data,
-				loaded: true
+				portfolioLoaded: true
 			})
 		})
 	}
 
-	 getInitialPosts() {
+	getInitialPosts() {
 		 fetch('http://157.245.241.73/portfolios')
 		.then(res => res.json())
 		.then((data) =>{
 				this.setState({
 					portfolio: data,
-					loaded: true
+					portfolioLoaded: true
 				})
 			}
 		)
 	}
 
+
 	componentDidMount(){
 		this.getAllTags();
 		this.getInitialPosts();
 	}
+
+	
 	render() {
-		if ( this.state.loaded === false ){
-			return <div>Loading...</div>
-		} else {
-			return(
-				<div className="pagePortfolio">
-					<div className="categories">
-						{this.state.initialTypes.map(function(job){
-							return(
-								<div onClick={this.tagClickHandler} className="category" key={job.id} type_id={job.id} type={job.portfoliotype}>
-									{job.portfoliotype}
-								</div>
-							)
-						}, this)}
-						<div onClick={this.resetPortfolio} className="reset" disabled={this.state.filteredTags < 1 ? true : false}  >
-							Reset
-						</div>
+		const portfolioLoaded = this.state.portfolioLoaded
+		const tagsLoaded = this.state.tagsLoaded
+		let filteredTags = this.state.filteredTags
+		return(
+			<div className="pagePortfolio">
+				<div className="categories">
+					{
+						tagsLoaded ? (
+							this.state.initialTypes.map(function(job){
+								return(
+									<div  onClick={this.tagClickHandler} className={ filteredTags.includes(`${job.id}`) ? "active category" : "category" } key={job.id} type_id={job.id} type={job.portfoliotype}>
+										{job.portfoliotype}
+									</div>
+								)
+							}, this)
+						) : (
+							<Loader />
+						)
+					}
+
+					<div onClick={this.resetPortfolio} className="reset" disabled={this.state.filteredTags < 1 ? true : false}  >
+						Reset
 					</div>
-					<div className="portfolio-items">
-						{
+				</div>
+				<div className="portfolio-items">
+					{
+						portfolioLoaded ? (
 							this.state.portfolio.map(function(item) {
 								return(
 									<Item title={item.portfolioname} key={item.id} tags={item.portfolio_types} images={item.images}/>
 								)
 							})
-						}
-					</div>
+						) : (
+							<Loader />
+						)
+					}
 				</div>
-			)
-		}
-		
+			</div>
+		)
 	}
 }
 

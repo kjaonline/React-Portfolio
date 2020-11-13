@@ -44,9 +44,9 @@ function Footer(props) {
 
 
 
- const mapStateToProps = (state) => {
-	 return { quotes: state.quotesReducer }
- }
+const mapStateToProps = (state) => {
+	return { quotes: state.quotesReducer }
+}
 
 export default compose(
 	withRouter,

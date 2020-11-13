@@ -1,9 +1,11 @@
 const portfolioTagsReducer = ( state = [], action) => {
 	switch(action.type){
 		case 'GETPORTFOLIOTAGS':
-			return action.payload
+				return action.payload
+			break;
 		case 'UPDATETAGS':
-			console.log(action)
+				console.log(action)
+			break;
 			// return action.payload
 		default:
 			return state
