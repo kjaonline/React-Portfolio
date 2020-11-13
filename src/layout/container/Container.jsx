@@ -11,22 +11,26 @@ import Home from '../../pages/Home/Home'
 import About from '../../pages/About/About'
 import Experience from '../../pages/Experience/Experience'
 import Portfolio from '../../pages/Portfolio/Portfolio'
+import IndivdualPortfolio from '../../pages/Portfolio/IndividualPortfolio'
 
 class Container extends React.Component{
 	render (){
 		return(
 			<main className="container">
 				<Switch>
-					<Route path="/portfolio">
+					<Route exact path="/portfolio">
 						<Portfolio />
 					</Route>
-					<Route path="/experience">
+					<Route exact path="/portfolio/:id">
+						<IndivdualPortfolio />
+					</Route>
+					<Route exact path="/experience">
 						<Experience />
 					</Route>
-					<Route path="/about">
+					<Route exact path="/about">
 						<About />
 					</Route>
-					<Route path="/">
+					<Route exact path="/">
 						<Home />
 					</Route>
 				</Switch>

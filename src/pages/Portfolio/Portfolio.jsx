@@ -101,6 +101,9 @@ class Portfolio extends React.Component{
 		return(
 			<div className="pagePortfolio">
 				<div className="categories">
+					<div className="tags-title">
+						Tags
+					</div>
 					<div className="tags-container">
 					{
 						tagsLoaded ? (
@@ -127,7 +130,7 @@ class Portfolio extends React.Component{
 							portfolioLoaded ? (
 								this.state.portfolio.map(function(item) {
 									return(
-										<Item title={item.portfolioname} key={item.id} tags={item.portfolio_types} images={item.images} filteredTags={filteredTags} job={item.id}/>
+										<Item title={item.portfolioname} key={item.id} tags={item.portfolio_types} images={item.images} filteredTags={filteredTags} id={item.id}/>
 									)
 								})
 							) : (
@@ -136,6 +139,7 @@ class Portfolio extends React.Component{
 						) : ( 
 							<div className="nothing">
 								We Found Nothing
+								<button onClick={this.resetPortfolio}>Click Here to Reset Filters</button>
 							</div>
 						)
 						

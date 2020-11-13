@@ -1,0 +1,61 @@
+@media screen and (max-width: 991px) {
+	/* start of large tablet styles */
+	
+}
+	
+@media screen and (max-width: 767px) {
+/* start of medium tablet styles */
+
+}
+
+@media screen and (max-width: 479px) {
+/* start of phone styles */
+	.header {
+		display: block;
+		.branding {
+			text-align: center;
+			padding: 10px;
+		}
+		.navLinks {
+			justify-content: center;
+			padding: 10px;
+		}
+	}
+
+	.page-home {
+		.skills {
+			.skill {
+				display: block;
+				> div {
+					width: 100%!important;
+					padding: 5px;
+					text-align: center;
+				}
+			}
+		}
+	}
+	.page-about {
+		.experience .experience-header {
+			display: block;
+			text-align: center;
+			> div {
+				width: 100%!important;
+				margin-bottom: 10px;
+			}
+		}
+	}
+
+	.pagePortfolio {
+		display: block;
+		> div {
+			width: 100%!important;
+		}
+		.portfolio-items {
+			.portfolio-item {
+				width: 100%;
+				margin: 0;
+				padding: 10px;
+			}
+		}
+	}
+}

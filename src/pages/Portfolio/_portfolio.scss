@@ -2,69 +2,20 @@
 	@include siteWidth(1200px);
 	display: flex;
 	
-
-	.loader {
-		display: inline-block;
-		position: absolute;
-		width: 80px;
-		height: 80px;
-		left: 50%;
-		top: 50%;
-		transform: translateX(-50%) translateY(-50%);
-		transition: 0.25s all;
-		div {
-			position: absolute;
-			top: 33px;
-			width: 13px;
-			height: 13px;
-			border-radius: 50%;
-			background: #fff;
-			animation-timing-function: cubic-bezier(0, 1, 1, 0);
-			&:nth-child(1) {
-				left: 8px;
-				animation: lds-ellipsis1 0.6s infinite;
-			}
+	.nothing {
+		text-align: center;
+		button {
+			display: block;
+			margin: 15px auto;
+			background: $secondary;
+			border: none;
+			padding: 10px;
+			border-radius: 3px;
+			font-size: .8em;
+			cursor: pointer;
+		}
+	}
 	
-			&:nth-child(2) {
-				left: 8px;
-				animation: lds-ellipsis2 0.6s infinite;
-			}
-	
-			&:nth-child(3) {
-				left: 32px;
-				animation: lds-ellipsis2 0.6s infinite;
-			}
-	
-			&:nth-child(4) {
-			left: 56px;
-			animation: lds-ellipsis3 0.6s infinite;
-			}
-			@keyframes lds-ellipsis1 {
-				0% {
-				  transform: scale(0);
-				}
-				100% {
-				  transform: scale(1);
-				}
-			  }
-			  @keyframes lds-ellipsis3 {
-				0% {
-				  transform: scale(1);
-				}
-				100% {
-				  transform: scale(0);
-				}
-			  }
-			  @keyframes lds-ellipsis2 {
-				0% {
-				  transform: translate(0, 0);
-				}
-				100% {
-				  transform: translate(24px, 0);
-				}
-			  }
-		  }
-	  }
 
 	  
 	  
@@ -73,7 +24,13 @@
 		display: block;
 		padding: 10px;
 		position: relative;
+		.tags-title {
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
 		.tags-container{
+			padding: 10px 0;
 			min-height:100px;
 			position: relative;
 
@@ -115,7 +72,7 @@
 	.portfolio-items {
 		width: 70%;
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: center;
 		flex-wrap: wrap;
 		padding: 10px;
@@ -124,6 +81,7 @@
 		.portfolio-item {
 			width: calc(100% / 3 - 20px);
 			margin: 10px;
+			color: #fff;
 			.portfolio-header {
 				position: relative;
 				img {
@@ -160,3 +118,118 @@
 		}
 	}
 }
+
+.individualPortfolio {
+	min-height: 300px;
+	position: relative;
+
+	.individualPortfolio-body {
+		@include siteWidth(1200px);
+		position: relative;
+	}
+
+	.individualPortfolio-head {
+		position: relative;
+		overflow: hidden;
+		&::before {
+			content: '';
+			z-index: 2;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(#000, .5);
+		}
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			max-height: 300px;
+			filter: blur(10px);
+			
+		}
+		&-info {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			width: 100%;
+			max-width: 1200px;
+			text-align: center;
+			z-index: 3;
+		}
+
+		.tags {
+			span {
+				margin: 5px;
+				border-radius: 3px;
+				padding: 5px;
+				border: 1px solid #fff;
+			}
+		}
+	}
+}
+
+.loader {
+	display: inline-block;
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	transition: 0.25s all;
+	div {
+		position: absolute;
+		top: 33px;
+		width: 13px;
+		height: 13px;
+		border-radius: 50%;
+		background: #fff;
+		animation-timing-function: cubic-bezier(0, 1, 1, 0);
+		&:nth-child(1) {
+			left: 8px;
+			animation: lds-ellipsis1 0.6s infinite;
+		}
+
+		&:nth-child(2) {
+			left: 8px;
+			animation: lds-ellipsis2 0.6s infinite;
+		}
+
+		&:nth-child(3) {
+			left: 32px;
+			animation: lds-ellipsis2 0.6s infinite;
+		}
+
+		&:nth-child(4) {
+		left: 56px;
+		animation: lds-ellipsis3 0.6s infinite;
+		}
+		@keyframes lds-ellipsis1 {
+			0% {
+			  transform: scale(0);
+			}
+			100% {
+			  transform: scale(1);
+			}
+		  }
+		  @keyframes lds-ellipsis3 {
+			0% {
+			  transform: scale(1);
+			}
+			100% {
+			  transform: scale(0);
+			}
+		  }
+		  @keyframes lds-ellipsis2 {
+			0% {
+			  transform: translate(0, 0);
+			}
+			100% {
+			  transform: translate(24px, 0);
+			}
+		  }
+	  }
+  }
