@@ -99,52 +99,54 @@ class Portfolio extends React.Component{
 		let filteredTags = this.state.filteredTags
 		let filteredPortfolio = this.state.portfolio.length > 1
 		return(
-			<div className="pagePortfolio">
-				<div className="categories">
-					<div className="tags-title">
-						Tags
-					</div>
-					<div className="tags-container">
-					{
-						tagsLoaded ? (
-							this.state.initialTypes.map(function(job){
-								return(
-									<div  onClick={this.tagClickHandler} className={ filteredTags.includes(`${job.id}`) ? "active category" : "category" } key={job.id} type_id={job.id} type={job.portfoliotype}>
-										{job.portfoliotype}
-									</div>
-								)
-							}, this)
-						) : (
-							<Loader />
-						)
-					}
-					</div>
-
-					<div onClick={this.resetPortfolio} className="reset" disabled={this.state.filteredTags < 1 ? true : false}  >
-						Reset
-					</div>
-				</div>
-				<div className="portfolio-items">
-					{
-						filteredPortfolio ? (
-							portfolioLoaded ? (
-								this.state.portfolio.map(function(item) {
+			<div className="pageWrapper">
+				<div className="page pagePortfolio">
+					<div className="categories">
+						<div className="tags-title">
+							Tags
+						</div>
+						<div className="tags-container">
+						{
+							tagsLoaded ? (
+								this.state.initialTypes.map(function(job){
 									return(
-										<Item title={item.portfolioname} key={item.id} tags={item.portfolio_types} images={item.images} filteredTags={filteredTags} id={item.id}/>
+										<div  onClick={this.tagClickHandler} className={ filteredTags.includes(`${job.id}`) ? "active category" : "category" } key={job.id} type_id={job.id} type={job.portfoliotype}>
+											{job.portfoliotype}
+										</div>
 									)
-								})
+								}, this)
 							) : (
 								<Loader />
 							)
-						) : ( 
-							<div className="nothing">
-								We Found Nothing
-								<button onClick={this.resetPortfolio}>Click Here to Reset Filters</button>
-							</div>
-						)
-						
-						
-					}
+						}
+						</div>
+
+						<div onClick={this.resetPortfolio} className="reset" disabled={this.state.filteredTags < 1 ? true : false}  >
+							Reset
+						</div>
+					</div>
+					<div className="portfolio-items">
+						{
+							filteredPortfolio ? (
+								portfolioLoaded ? (
+									this.state.portfolio.map(function(item) {
+										return(
+											<Item title={item.portfolioname} key={item.id} tags={item.portfolio_types} images={item.images} filteredTags={filteredTags} id={item.id}/>
+										)
+									})
+								) : (
+									<Loader />
+								)
+							) : ( 
+								<div className="nothing">
+									We Found Nothing
+									<button onClick={this.resetPortfolio}>Click Here to Reset Filters</button>
+								</div>
+							)
+							
+							
+						}
+					</div>
 				</div>
 			</div>
 		)

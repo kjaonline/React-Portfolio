@@ -25,3 +25,44 @@ body {
 	margin: 0 auto;
 	display: block;
 }
+
+.container {
+	position: relative;
+	width: 100%;
+	
+}
+
+.pageWrapper {
+	width: 100%!important;
+	
+}
+
+.enter {
+	transition: .5s all;
+	opacity: .2;
+	&.enter-active {
+		position: relative;
+		z-index: 2;
+		opacity: 1;
+	}
+	&.enter-done {
+		opacity: 1;
+		position: relative;
+	}
+}
+
+.exit {
+	position: absolute;
+	top: 0;
+	opacity: 1;
+	transition: .5s all;
+	&.exit-active {
+		position: absolute;
+		z-index: 1;
+		opacity: 0;
+	}
+	&.exit-done {
+		position: absolute;
+		
+	}
+}

@@ -13,27 +13,43 @@ import Experience from '../../pages/Experience/Experience'
 import Portfolio from '../../pages/Portfolio/Portfolio'
 import IndivdualPortfolio from '../../pages/Portfolio/IndividualPortfolio'
 
+import {
+  CSSTransition,
+  TransitionGroup
+} from 'react-transition-group'
+
 class Container extends React.Component{
 	render (){
 		return(
 			<main className="container">
-				<Switch>
-					<Route exact path="/portfolio">
-						<Portfolio />
-					</Route>
-					<Route exact path="/portfolio/:id">
-						<IndivdualPortfolio />
-					</Route>
-					<Route exact path="/experience">
-						<Experience />
-					</Route>
-					<Route exact path="/about">
-						<About />
-					</Route>
-					<Route exact path="/">
-						<Home />
-					</Route>
-				</Switch>
+				<Route render={({ location }) =>(
+					<TransitionGroup>
+						<CSSTransition
+							key={location.key}
+							timeout={500}	
+							className="pageTransition"
+						>
+							<Switch location={location}>
+								<Route exact path="/portfolio">
+									<Portfolio />
+								</Route>
+								<Route exact path="/portfolio/:id">
+									<IndivdualPortfolio />
+								</Route>
+								<Route exact path="/experience">
+									<Experience />
+								</Route>
+								<Route exact path="/about">
+									<About />
+								</Route>
+								<Route exact path="/">
+									<Home />
+								</Route>
+							</Switch>
+						</CSSTransition>
+					</TransitionGroup>
+				)} />
+				
 			</main>
 		)
 	}

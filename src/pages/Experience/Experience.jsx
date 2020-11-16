@@ -2,8 +2,10 @@ import Experiences from './components/experiences'
 
 function About() {
 	return(
-		<div className="page-about">
-			<Experiences />
+		<div className="pageWrapper">
+			<div className="page page-about">
+				<Experiences />
+			</div>
 		</div>
 	)
 }

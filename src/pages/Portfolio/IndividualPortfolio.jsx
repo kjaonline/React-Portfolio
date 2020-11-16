@@ -29,29 +29,31 @@ class IndividualPortfolio extends React.Component{
 		let loaded = this.state.loaded
 		let data = this.state.data
 		return(
-			<div className="individualPortfolio">
-				{
-					loaded ? (
-						<div className="info">
-							<div className="individualPortfolio-head">
-								<img src={'http://api.krisalcordo.com' + data.images[0].url} alt=""/>
-								<div className="individualPortfolio-head-info">
-									<h1>{data.portfolioname}</h1>
-									<div className="tags">
-										{data.portfolio_types.map(tag =>{
-											return <span key={ tag.id }>{tag.portfoliotype}</span>
-										})}
+			<div className="pageWrapper">
+				<div className="page individualPortfolio">
+					{
+						loaded ? (
+							<div className="info">
+								<div className="individualPortfolio-head">
+									<img src={'http://api.krisalcordo.com' + data.images[0].url} alt=""/>
+									<div className="individualPortfolio-head-info">
+										<h1>{data.portfolioname}</h1>
+										<div className="tags">
+											{data.portfolio_types.map(tag =>{
+												return <span key={ tag.id }>{tag.portfoliotype}</span>
+											})}
+										</div>
 									</div>
 								</div>
+								<div className="individualPortfolio-body">
+									<ReactMarkdown source={data.portfolio_description} />
+								</div>
 							</div>
-							<div className="individualPortfolio-body">
-								<ReactMarkdown source={data.portfolio_description} />
-							</div>
-						</div>
-					) : (
-						<Loader />
-					)
-				}
+						) : (
+							<Loader />
+						)
+					}
+				</div>
 			</div>
 		)
 	}

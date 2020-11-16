@@ -3,8 +3,10 @@ import AboutText from './components/abouttext'
 
 function About() {
 	return(
-		<div className="page-about">
-			<AboutText />
+		<div className="pageWrapper">
+			<div className="page page-about">
+				<AboutText />
+			</div>
 		</div>
 	)
 }
