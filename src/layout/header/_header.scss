@@ -22,7 +22,7 @@
 			color: $textColor;
 			padding: 5px 10px;
 			text-decoration: none;
-			border: 1px solid #fff;
+			// border: 1px solid #fff;
 			margin: 0 5px;
 			border-radius: 5px;
 			transition: 0.25s all;
@@ -30,13 +30,13 @@
 				color: $secondary;
 				background: $secondary;
 				color: #fff;
-				border: 1px solid $secondary;
+				// border: 1px solid $secondary;
 			}
 		}
 		.active {
 			background: $secondary;
 			color: $dark;
-			border: 1px solid $secondary;
+			// border: 1px solid $secondary;
 		}
 	}
 }
