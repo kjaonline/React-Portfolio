@@ -5,7 +5,7 @@ function About() {
 		<div className="pageWrapper">
 			<div className="page page-about">
 				<div className="full-resume">
-					<a href={process.env.PUBLIC_URL + '/public/ResumeKrisAlcordo2020.pdf'}>Click Here To Download My Full Resume</a>
+					<a href={'https://drive.google.com/file/d/1rK40MUJVJsD1NVkZu0tT36_87WhijiUY'}>Click Here To Download My Full Resume</a>
 				</div>
 				<Experiences />
 			</div>
