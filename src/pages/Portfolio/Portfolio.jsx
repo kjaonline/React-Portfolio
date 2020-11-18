@@ -1,6 +1,5 @@
 import React from 'react'
 import Item from './components/portfolioItem'
-import axios from 'axios'
 
 import Loader from './components/loader'
 
@@ -14,11 +13,13 @@ class Portfolio extends React.Component{
 			disabled: true,
 			portfolioLoaded: false,
 			tagsLoaded: false,
-			foundItems: 0
+			foundItems: 0,
+			filterLoaded: true
 		}
 		
 		this.tagClickHandler = this.tagClickHandler.bind(this)
 		this.getInitialPosts = this.getInitialPosts.bind(this)
+		this.filterLoader = this.filterLoader.bind(this)
 	}
 
 	tagClickHandler(e) {
@@ -29,6 +30,7 @@ class Portfolio extends React.Component{
 			filteredTags: [],
 			foundItems: 0
 		})
+		this.filterLoader();
 		this.getInitialPosts();
 	}
 
@@ -39,10 +41,21 @@ class Portfolio extends React.Component{
 			currentTags.push(e.target.getAttribute('type_id'))
 			this.setState({
 				filteredTags: currentTags,
-				foundItems: found
+				foundItems: found,
 			})
 		}
+		this.filterLoader()
+	}
 
+	filterLoader () {
+		this.setState({
+			filterLoaded: false
+		})
+		setTimeout(() => {
+			this.setState({
+				filterLoaded: true
+			})
+		},500);
 	}
 
 	getAllTags = () => {
@@ -80,6 +93,7 @@ class Portfolio extends React.Component{
 		const tagsLoaded = this.state.tagsLoaded
 		let filteredTags = this.state.filteredTags
 		let foundItems = this.state.foundItems;
+
 		
 		return(
 			<div className="pageWrapper">
@@ -108,7 +122,10 @@ class Portfolio extends React.Component{
 							Reset
 						</div>
 					</div>
-					<div className="portfolio-items">
+					<div className={this.state.filterLoaded ? 'portfolio-items' : 'portfolio-items loading'}>
+						<div className="loading-animation">
+							<Loader />
+						</div>
 						{
 							portfolioLoaded ? (
 								foundItems == 0 ? (

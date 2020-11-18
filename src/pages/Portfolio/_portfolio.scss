@@ -77,6 +77,38 @@
 		flex-wrap: wrap;
 		padding: 10px;
 		position: relative;
+		
+		&.loading  {
+			transition: 0.5s;
+			.loading-animation{
+				visibility: visible;
+				opacity: 1;
+			
+			}
+		}
+		.loading-animation {
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 3;
+			background: $dark;
+			width: 100%;
+			height: 100%;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			visibility: hidden;
+			opacity: 0;
+			
+			.loader {
+				position: relative;
+				transform: none;
+				left: auto;
+				top: auto;
+			}
+		}
 
 		.portfolio-item {
 			width: calc(100% / 3 - 20px);
