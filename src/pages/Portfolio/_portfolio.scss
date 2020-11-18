@@ -84,11 +84,16 @@
 			color: #fff;
 			.portfolio-header {
 				position: relative;
-				img {
-					height: 300px;
-					width: 100%;
-					object-fit: cover;
+				.image {
+					min-height: 250px;
+					img {
+						height: 250px;
+						width: 100%;
+						object-fit: cover;
+					}
 				}
+
+				
 				.portfolio-title {
 					position: absolute;
 					left: 50%;

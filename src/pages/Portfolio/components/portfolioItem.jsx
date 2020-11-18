@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 function Item (props){
 	return(
 		<Link to={`portfolio/${props.id}`} className="portfolio-item">
+			
 			<div className="portfolio-header">
-				<img src={'http://api.krisalcordo.com' + props.images[0].url} alt=""/>
+				<div className="image">
+					<img src={'http://api.krisalcordo.com' + props.images[0].url} alt=""/>
+				</div>
 				<div className="portfolio-title">
 				{ props.title }
 				</div>
